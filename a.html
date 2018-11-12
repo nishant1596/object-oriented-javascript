@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="file-inputs">
+    <input type="file" name="fileToUpload[]" id="file-1" class="inputfile"/>
+    <label for="file-1"><span>Select a photo</span></label>
+  </div>
+  <button type="button" id="add-html">Press it</button>
+  <script type="text/javascript">
+let num=0;
+    const addBtn=document.querySelector('#add-html');
+    const fileInput=document.querySelector('body')
+    addBtn.addEventListener('click',()=>{
+      const div=document.createElement('div');
+
+      console.log(num);
+      div.innerHTML=`<input type="file" name="fileToUpload[]" id="file-${++num}" class="inputfile"/>
+      <label for="file-${num}"><span>Select a photo</span></label>`;
+      fileInput.appendChild(div);
+    })
+  </script>
+</body>
+</html>
